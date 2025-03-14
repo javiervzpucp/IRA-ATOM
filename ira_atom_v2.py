@@ -124,9 +124,9 @@ class ISADConverter:
             logger.error(f"Error: {str(e)}")
             return False
 
-if __name__ == "__main__":
-    converter = ISADConverter()
-    if converter.process("Diplomas.csv", "resultados/salida_ia"):
-        print("✅ Transformación exitosa con mejoras de IA")
-    else:
-        print("❌ Error en el proceso")
+#if __name__ == "__main__":
+#    converter = ISADConverter()
+#    if converter.process("Diplomas.csv", "resultados/salida_ia"):
+#        print("✅ Transformación exitosa con mejoras de IA")
+#    else:
+#        print("❌ Error en el proceso")
