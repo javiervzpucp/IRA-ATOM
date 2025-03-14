@@ -8,6 +8,10 @@ import pandas as pd
 import os
 import io
 from dotenv import load_dotenv
+
+import sys
+sys.path.append(os.path.dirname(__file__))
+
 from ira_atom_v2 import ISADConverter  # Asumiendo que el código está en isad_converter.py
 
 # Cargar variables de entorno
