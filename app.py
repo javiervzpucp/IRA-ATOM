@@ -7,7 +7,6 @@ import streamlit as st
 import pandas as pd
 import os
 import io
-from datetime import datetime
 from dotenv import load_dotenv
 from ira_atom_v2 import ISADConverter  # Asumiendo que el código está en isad_converter.py
 
@@ -21,6 +20,8 @@ st.set_page_config(page_title="Conversor ISAD(G)", page_icon="📚", layout="wid
 # Título de la aplicación
 st.title("🖋️ Conversor de Documentos Archivísticos a ISAD(G)")
 st.markdown("---")
+
+st.write("🔍 Depuración: La aplicación ha cargado hasta aquí correctamente.")
 
 # Sidebar para configuración
 with st.sidebar:
