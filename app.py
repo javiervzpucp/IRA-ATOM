@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 import sys
 sys.path.append(os.path.dirname(__file__))
 
-from ira_atom_v2 import ISADConverter  # Asumiendo que el código está en isad_converter.py
+#from ira_atom_v2 import ISADConverter  # Asumiendo que el código está en isad_converter.py
 
 # Cargar variables de entorno
 load_dotenv()
@@ -20,6 +20,20 @@ HF_API_TOKEN = os.getenv("HF_API_TOKEN")
 
 # Configuración inicial
 st.set_page_config(page_title="Conversor ISAD(G)", page_icon="📚", layout="wide")
+
+try:
+    from ira_atom_v2 import ISADConverter
+    st.write("✅ ISADConverter importado correctamente.")
+except Exception as e:
+    st.error(f"🚨 Error al importar ISADConverter: {str(e)}")
+    st.stop()
+
+HF_API_TOKEN = os.getenv("HF_API_TOKEN")
+if not HF_API_TOKEN:
+    st.error("🚨 HF_API_TOKEN NO está cargado en el entorno de Streamlit Cloud.")
+    st.stop()
+else:
+    st.write(f"🔑 Token de Hugging Face cargado: {HF_API_TOKEN[:5]}***")
 
 # Título de la aplicación
 st.title("🖋️ Conversor de Documentos Archivísticos a ISAD(G)")
