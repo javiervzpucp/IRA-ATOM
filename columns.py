@@ -11,7 +11,6 @@ from dotenv import load_dotenv
 import re
 from huggingface_hub import InferenceClient  # Importar InferenceClient
 from collections import Counter
-import random  # Para seleccionar filas aleatorias
 
 # Cargar variables de entorno
 load_dotenv()
